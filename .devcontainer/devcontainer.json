@@ -12,7 +12,8 @@
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [
       // ASP.NET Core Web/API App, Blazor App
-      5000, 5001
+      5000, 5001,
+      5100, 5101
     ],
   
     "features": {
