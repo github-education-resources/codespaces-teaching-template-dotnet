@@ -52,8 +52,11 @@ This template repository contains:
 1. Create a repository from this template. Use this [create repo link](../../generate). You can make the repository private or public, up to you.
 1. Navigate to the main page of the newly created repository.
 1. Under the repository name, use the Code drop-down menu, and in the Codespaces tab, select "Create codespace on main".
+
    ![Create codespace](https://docs.github.com/assets/cb-138303/images/help/codespaces/new-codespace-button.png)
+
 1. Wait as Github initializes the codespace:
+
    ![Creating codespace](./images/Codespace_build.png)
 
 ## 🛠️ Customization
