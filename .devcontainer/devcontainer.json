@@ -109,7 +109,7 @@
   
           // Uncomment if you want to disable the minimap view
           // "editor.minimap.enabled": false,
-  
+
           // Uncomment if you want to disable the welcome page of GitLens
           // "gitlens.showWelcomeOnInstall": false,
           // "gitlens.showWhatsNewAfterUpgrades": false,
