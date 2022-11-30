@@ -5,27 +5,23 @@
       "dockerfile": "./Dockerfile",
       "context": ".",
       "args": {
-        "VARIANT": "7.0-jammy"
+        // version: 7.0, 7.0-bullseye-slim, 7.0-jammy, 6.0, 6.0-bullseye-slim, 6.0-jammy, 6.0-focal
+        "VARIANT": "7.0"
       }
     },
   
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [
-      // ASP.NET Core Web/API App, Blazor App
+      // ASP.NET Core Web/API App
       5000, 5001,
       5100, 5101
     ],
   
     "features": {
-      // AWS CLI
-      // "ghcr.io/devcontainers/features/aws-cli:1": {
-      //   "version": "latest"
-      // },
-  
       // Azure CLI
-      // "ghcr.io/devcontainers/features/azure-cli:1": {
-      //   "version": "latest"
-      // },
+      "ghcr.io/devcontainers/features/azure-cli:1": {
+        "version": "latest"
+      },
   
       // GitHub CLI
       "ghcr.io/devcontainers/features/github-cli:1": {
@@ -61,67 +57,17 @@
       "vscode": {
         // Add the IDs of extensions you want installed when the container is created.
         "extensions": [
-          // Extensions - GitHub
-          // "cschleiden.vscode-github-actions",
-          // "GitHub.vscode-pull-request-github",
-  
-          // Extensions - Azure
-          // "Azurite.azurite",
-          // "ms-azuretools.vscode-bicep",
-          // "ms-vscode.vscode-node-azure-pack",
-  
-          // Extensions - Collaboration
-          // "eamodio.gitlens",
-          // "EditorConfig.EditorConfig",
-          // "MS-vsliveshare.vsliveshare-pack",
-          // "streetsidesoftware.code-spell-checker",
-  
-          // Extensions - .NET
-          "Fudge.auto-using",
-          "jongrant.csharpsortusings",
-          "kreativ-software.csharpextensions",
-  
-          // Extensions - Markdown
-          // "bierner.github-markdown-preview",
-          // "DavidAnson.vscode-markdownlint",
-          // "docsmsft.docs-linting",
-          // "johnpapa.read-time",
-          // "yzhang.markdown-all-in-one",
-  
-          // Extensions - REQUIRED
-          "GitHub.copilot",
           "ms-dotnettools.csharp",
           "ms-vscode.PowerShell",
+          "ms-vscode.vscode-node-azure-pack",
           "VisualStudioExptTeam.vscodeintellicode"
         ],
   
         "settings": {
-          // Uncomment if you want to use zsh as the default shell
-          // "terminal.integrated.defaultProfile.linux": "zsh",
-          // "terminal.integrated.profiles.linux": {
-          //   "zsh": {
-          //     "path": "/usr/bin/zsh"
-          //   }
-          // },
-  
-          // Uncomment if you want to use CaskaydiaCove Nerd Font as the default terminal font
-          "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
-  
-          // Uncomment if you want to disable the minimap view
-          // "editor.minimap.enabled": false,
-
-          // Uncomment if you want to disable the welcome page of GitLens
-          // "gitlens.showWelcomeOnInstall": false,
-          // "gitlens.showWhatsNewAfterUpgrades": false,
-  
-          // Uncomment if you prefer the light colour theme
-          // "workbench.colorTheme": "Default Light+",
-  
           // Recommended settings for the explorer pane
           "explorer.sortOrder": "type",
           "explorer.fileNesting.enabled": true,
           "explorer.fileNesting.patterns": {
-            // "*.bicep": "${capture}.json",
             "*.js": "${capture}.js.map",
             "*.razor": "${capture}.razor.cs,${capture}.razor.css"
           }
@@ -131,9 +77,6 @@
   
     // Uncomment if you want to use bash in 'postCreateCommand' after the container is created
     "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
-  
-    // Uncomment if you want to use zsh in 'postCreateCommand' after the container is created
-    // "postCreateCommand": "/usr/bin/zsh ./.devcontainer/post-create.sh > ~/post-create.log",
   
     // Uncomment if you want to connect other than 'root'. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "vscode"
