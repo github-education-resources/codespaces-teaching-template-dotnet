@@ -72,7 +72,7 @@ You can configure things like:
 
 #### Base Image
 
-By default, this devcontainer settings uses the base image of .NET 7.0 on Debian 11 by default. You can change the base image to [one in the list](https://hub.docker.com/_/microsoft-dotnet-sdk/).
+By default, this devcontainer settings uses the base image of **.NET 7.0 on Debian 11** by default. You can change the base image to [one in the list](https://hub.docker.com/_/microsoft-dotnet-sdk/).
 
 ```jsonc
 "build": {
@@ -86,7 +86,7 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Debian
 
 #### Features
 
-1. Azure CLI: Uncomment the section under the `features` attribute.
+1. **Azure CLI**: Uncomment the section under the `features` attribute.
 
     ```jsonc
     "features": {
@@ -98,7 +98,7 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Debian
     },
     ```
 
-1. GitHub CLI: Uncomment the section under the `features` attribute.
+1. **GitHub CLI**: Uncomment the section under the `features` attribute.
 
     ```jsonc
     "features": {
@@ -110,7 +110,7 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Debian
     },
     ```
 
-1. node.js: Uncomment the section under the `features` attribute. The latest LTS version of node.js is chosen by default.
+1. **node.js**: Uncomment the section under the `features` attribute. The latest LTS version of node.js is chosen by default.
 
     ```jsonc
     "features": {
@@ -129,7 +129,7 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Debian
 
 #### Extensions
 
-1. There are optional extensions pre-configured under the `customizations.vscode.extensions` attribute.
+1. There are optional extensions pre-installed under the `customizations.vscode.extensions` attribute.
 
     ```jsonc
     "customizations": {
@@ -161,7 +161,7 @@ You can pre-install any tool through `post-create.sh`, which the devcontainer fe
     sudo chmod +x /usr/local/bin/oh-my-posh
     ```
 
-> 🔍 There are more customization scenarios in `post-create.sh`, if you like to follow.
+> 🔍 There are more customization scenarios in [`post-create.sh`](./.devcontainer/post-create.sh), if you like to follow.
 
 
 ## 📚 Resources
