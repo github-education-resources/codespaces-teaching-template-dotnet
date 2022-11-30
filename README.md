@@ -11,10 +11,6 @@ This .NET Codespaces template provides you a normalized environment for you to b
 * **Can I use this template for other .NET applications?** _Absolutely_. This template uses ASP.NET web app and API app as examples.
 * **Prerequisites:** _None_. This template will provide a working and deployable web app and API app you can immediately extend for your needs.
 
-🤔 Curious? Watch the following video where we explain all the details:
-
-[![Teaching .NET with Codespaces](https://img.youtube.com/vi/TO_BE_UPDATED/0.jpg)](https://youtu.be/TO_BE_UPDATED "Teaching .NET with Codespaces")
-
 <details>
    <summary><b>🎥 Watch the video tutorial to learn more about Codespaces</b></summary>
    
@@ -57,7 +53,7 @@ This template repository contains:
 
 1. Wait as Github initializes the codespace:
 
-   ![Creating codespace](./images/Codespace_build.png)
+   ![Creating codespace](./images/codespaces-initializing.png)
 
 ## 🛠️ Customization
 
@@ -76,41 +72,21 @@ You can configure things like:
 
 #### Base Image
 
-By default, this devcontainer settings uses the base image of .NET 7.0 on Ubuntu 22.04 LTS (jammy). You can change the base image to one of the followings:
-
-- `7.0` (Debian 11)
-- `7.0-bullseye-slim` (Debian 11)
-- `7.0-jammy` (Ubuntu 22.04 LTS)
-- `6.0` (Debian 11)
-- `6.0-bullseye-slim` (Debian 11)
-- `6.0-jammy` (Ubuntu 22.04 LTS)
-- `6.0-focal` (Ubuntu 20.04 LTS)
+By default, this devcontainer settings uses the base image of **.NET 7.0 on Debian 11** by default. You can change the base image to [one in the list](https://hub.docker.com/_/microsoft-dotnet-sdk/).
 
 ```jsonc
 "build": {
   "dockerfile": "./Dockerfile",
   "context": ".",
   "args": {
-    "VARIANT": "7.0-jammy"
+    "VARIANT": "7.0"
   }
 }
 ```
 
 #### Features
 
-1. AWS CLI: Uncomment the section under the `features` attribute.
-
-    ```jsonc
-    "features": {
-      ...
-      "ghcr.io/devcontainers/features/aws-cli:1": {
-        "version": "latest"
-      }
-      ...
-    },
-    ```
-
-1. Azure CLI: Uncomment the section under the `features` attribute.
+1. **Azure CLI**: Uncomment the section under the `features` attribute.
 
     ```jsonc
     "features": {
@@ -122,7 +98,7 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Ubuntu
     },
     ```
 
-1. GitHub CLI: Uncomment the section under the `features` attribute.
+1. **GitHub CLI**: Uncomment the section under the `features` attribute.
 
     ```jsonc
     "features": {
@@ -134,13 +110,7 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Ubuntu
     },
     ```
 
-1. node.js: Uncomment the section under the `features` attribute. You can choose the node.js version of:
-
-    - `latest`
-    - `lts`
-    - `18`
-    - `16`
-    - `14`
+1. **node.js**: Uncomment the section under the `features` attribute. The latest LTS version of node.js is chosen by default.
 
     ```jsonc
     "features": {
@@ -159,40 +129,16 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Ubuntu
 
 #### Extensions
 
-1. There are optional extensions that you can selectively install, under the `customizations.vscode.extensions` attribute. You can simply uncomment each line to enable or comment out one to disable.
+1. There are optional extensions pre-installed under the `customizations.vscode.extensions` attribute.
 
     ```jsonc
     "customizations": {
       "vscode": {
         "extensions": [
-          // Recommended extensions - GitHub
-          "cschleiden.vscode-github-actions",
-          "GitHub.vscode-pull-request-github",
-  
-          // Recommended extensions - Azure
-          "Azurite.azurite",
-          "ms-azuretools.vscode-bicep",
+          "ms-dotnettools.csharp",
+          "ms-vscode.PowerShell",
           "ms-vscode.vscode-node-azure-pack",
-  
-          // Recommended extensions - Collaboration
-          "eamodio.gitlens",
-          "EditorConfig.EditorConfig",
-          "MS-vsliveshare.vsliveshare-pack",
-          "streetsidesoftware.code-spell-checker",
-  
-          // Recommended extensions - .NET
-          "Fudge.auto-using",
-          "jongrant.csharpsortusings",
-          "kreativ-software.csharpextensions",
-  
-          // Recommended extensions - Markdown
-          "bierner.github-markdown-preview",
-          "DavidAnson.vscode-markdownlint",
-          "docsmsft.docs-linting",
-          "johnpapa.read-time",
-          "yzhang.markdown-all-in-one",
-
-          ...
+          "VisualStudioExptTeam.vscodeintellicode"
         ],
         ...
       }
@@ -202,152 +148,9 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Ubuntu
 > 🔍 Alternatively, you can add as many extra extensions as you like, from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode).
 
 
-#### Settings
-
-1. In `devcontainer.json`, there are customisation options for your Codespaces settings, under the `customizations.vscode.settings` attribute. You can simply uncomment each item to enable or comment out one to disable.
-
-    ```jsonc
-    "customizations": {
-      "vscode": {
-        "settings": {
-          // Uncomment if you want to use zsh as the default shell
-          "terminal.integrated.defaultProfile.linux": "zsh",
-          "terminal.integrated.profiles.linux": {
-            "zsh": {
-              "path": "/usr/bin/zsh"
-            }
-          },
-
-          // Uncomment if you want to use CaskaydiaCove Nerd Font as the default terminal font
-          "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
-
-          // Uncomment if you want to disable the minimap view
-          "editor.minimap.enabled": false,
-
-          // Uncomment if you want to disable the welcome page of GitLens
-          "gitlens.showWelcomeOnInstall": false,
-          "gitlens.showWhatsNewAfterUpgrades": false,
-  
-          // Uncomment if you prefer the light colour theme
-          "workbench.colorTheme": "Default Light+",
-
-          // Recommended settings for the explorer pane
-          "explorer.sortOrder": "type",
-          "explorer.fileNesting.enabled": true,
-          "explorer.fileNesting.patterns": {
-            "*.js": "${capture}.js.map",
-            "*.razor": "${capture}.razor.cs,${capture}.razor.css"
-          }
-        }
-      }
-    }
-    ```
-
-> 🔍 If you want to do more granular configurations, refer to this page, [User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
-
-
-#### Lifecycle
-
-1. In `devcontainer.json`, if you want to use `bash` as your main shell and want to run the shell script after the container is created:
-
-    ```jsonc
-    // Uncomment if you want to use bash in 'postCreateCommand' after the container is created
-    "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
-    ```
-
-1. If you want to use `zsh` as your main shell and want to run the shell script after the container is created:
-
-    ```jsonc
-    // Uncomment if you want to use zsh in 'postCreateCommand' after the container is created
-    "postCreateCommand": "/usr/bin/zsh ./.devcontainer/post-create.sh > ~/post-create.log",
-    ```
-
-
 ### Customization on `post-create.sh` ##
 
-1. If you want to install CaskaydiaCove Nerd Font, uncomment the section below.
-
-    ```bash
-    ## CaskaydiaCove Nerd Font
-    # Uncomment the below to install the CaskaydiaCove Nerd Font
-    mkdir $HOME/.local
-    mkdir $HOME/.local/share
-    mkdir $HOME/.local/share/fonts
-    wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
-    unzip CascadiaCode.zip -d $HOME/.local/share/fonts
-    rm CascadiaCode.zip
-    ```
-
-    > Use this option if you want to use either oh-my-zsh for zsh or oh-my-posh for PowerShell.
-
-1. If you want to install Azure CLI extensions, uncomment the section below.
-
-    ```bash
-    ## AZURE CLI EXTENSIONS ##
-    # Uncomment the below to install Azure CLI extensions
-    extensions=(account alias deploy-to-azure functionapp subscription webapp)
-    for extension in $extensions;
-    do
-        az extension add --name $extension
-    done
-    ```
-
-1. If you want to install Azure Bicep CLI, uncomment the section below.
-
-    ```bash
-    ## AZURE BICEP CLI ##
-    # Uncomment the below to install Azure Bicep CLI
-    az bicep install
-    ```
-
-1. If you want to install Azure Functions Core Tools, uncomment the section below.
-
-    ```bash
-    ## AZURE FUNCTIONS CORE TOOLS ##
-    # Uncomment the below to install Azure Functions Core Tools
-    npm i -g azure-functions-core-tools@4 --unsafe-perm true
-    ```
-
-1. If you want to install Azurite, uncomment the section below.
-
-    ```bash
-    ## AZURITE ##
-    # Uncomment the below to install Azurite. Make sure you have installed node.js
-    npm install -g azurite
-    ```
-
-1. If you want to install Azure Static Web Apps CLI, uncomment the section below.
-
-    ```bash
-    ## AZURE STATIC WEB APPS CLI ##
-    # Uncomment the below to install Azure Static Web Apps CLI
-    npm install -g @azure/static-web-apps-cli
-    ```
-
-1. If you want to install Azure Dev CLI, uncomment the section below.
-
-    ```bash
-    ## AZURE DEV CLI ##
-    # Uncomment the below to install Azure Dev CLI
-    curl -fsSL https://aka.ms/install-azd.sh | bash
-    ```
-
-    > **DEPENDENCIES**: Make sure that you must get both Azure CLI and GitHub CLI installed beforehand.
-
-1. If you want to install plugins and themes for oh-my-zsh without using your dotfiles, uncomment the section below.
-
-    ```bash
-    ## OH-MY-ZSH PLUGINS & THEMES (POWERLEVEL10K) ##
-    # Uncomment the below to install oh-my-zsh plugins and themes (powerlevel10k) without dotfiles integration
-    git clone https://github.com/zsh-users/zsh-completions.git $HOME/.oh-my-zsh/custom/plugins/zsh-completions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-
-    git clone https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k --depth=1
-    ln -s $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme $HOME/.oh-my-zsh/custom/themes/powerlevel10k.zsh-theme
-    ```
-
-    > **DEPENDENCIES**: Make sure that you have already installed oh-my-zsh through the settings on `devcontainer.json`.
+You can pre-install any tool through `post-create.sh`, which the devcontainer features don't natively support yet. eg) PowerShell.
 
 1. If you want to install oh-my-posh for PowerShell, uncomment the section below
 
@@ -357,6 +160,9 @@ By default, this devcontainer settings uses the base image of .NET 7.0 on Ubuntu
     sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
     sudo chmod +x /usr/local/bin/oh-my-posh
     ```
+
+> 🔍 There are more customization scenarios in [`post-create.sh`](./.devcontainer/post-create.sh), if you like to follow.
+
 
 ## 📚 Resources
 

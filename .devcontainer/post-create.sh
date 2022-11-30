@@ -9,17 +9,7 @@ git config --global core.autocrlf input
 dotnet dev-certs https --trust
 
 ## Restore .NET packages and build the default solution
-dotnet restore .
-dotnet build .
-
-## CaskaydiaCove Nerd Font
-# Uncomment the below to install the CaskaydiaCove Nerd Font
-mkdir $HOME/.local
-mkdir $HOME/.local/share
-mkdir $HOME/.local/share/fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaCode.zip
-unzip CascadiaCode.zip -d $HOME/.local/share/fonts
-rm CascadiaCode.zip
+dotnet restore && dotnet build
 
 ## AZURE CLI EXTENSIONS ##
 # Uncomment the below to install Azure CLI extensions
@@ -60,5 +50,5 @@ rm CascadiaCode.zip
 
 ## OH-MY-POSH ##
 # Uncomment the below to install oh-my-posh
-# sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
-# sudo chmod +x /usr/local/bin/oh-my-posh
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
