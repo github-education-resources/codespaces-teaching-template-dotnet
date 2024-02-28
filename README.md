@@ -6,14 +6,14 @@ _Extend and use for your Web Development lessons in minutes._
 
 This .NET Codespaces template provides you a normalized environment for you to build your class on. No setup time needed from you or your students, allowing you to focus on the content and lessons.
 
-* **Who is this for?** _Educators of all levels_. 
-* **How much experience do students need?** _Zero_. This template is built with basic elements complete with comments so it can be used in beginner to advanced lessons.
-* **Can I use this template for other .NET applications?** _Absolutely_. This template uses ASP.NET web app and API app as examples.
-* **Prerequisites:** _None_. This template will provide a working and deployable web app and API app you can immediately extend for your needs.
+- **Who is this for?** _Educators of all levels_.
+- **How much experience do students need?** _Zero_. This template is built with basic elements complete with comments so it can be used in beginner to advanced lessons.
+- **Can I use this template for other .NET applications?** _Absolutely_. This template uses ASP.NET web app and API app as examples.
+- **Prerequisites:** _None_. This template will provide a working and deployable web app and API app you can immediately extend for your needs.
 
 <details>
    <summary><b>🎥 Watch the video tutorial to learn more about Codespaces</b></summary>
-   
+
    [![Codespaces Tutorial](https://img.youtube.com/vi/ozuDPmcC1io/0.jpg)](https://aka.ms/CodespacesVideoTutorial "Codespaces Tutorial")
 </details>
 
@@ -66,7 +66,6 @@ You can configure things like:
 - Operating system libraries and dependencies
 
 > 💡 Learn more about [customization and configuration in the official documentation](https://docs.github.com/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account)
-
 
 ### Customization on `devcontainer.json`
 
@@ -126,7 +125,6 @@ By default, this devcontainer settings uses the base image of **.NET 7.0 on Debi
 
 > 🔍 If you want to add more features, find [this repository: devcontainer features](https://github.com/devcontainers/features).
 
-
 #### Extensions
 
 1. There are optional extensions pre-installed under the `customizations.vscode.extensions` attribute.
@@ -135,7 +133,9 @@ By default, this devcontainer settings uses the base image of **.NET 7.0 on Debi
     "customizations": {
       "vscode": {
         "extensions": [
-          "ms-dotnettools.csharp",
+          "GitHub.copilot",
+          "GitHub.copilot-chat",
+          "ms-dotnettools.csdevkit",
           "ms-vscode.PowerShell",
           "ms-vscode.vscode-node-azure-pack",
           "VisualStudioExptTeam.vscodeintellicode"
@@ -147,10 +147,9 @@ By default, this devcontainer settings uses the base image of **.NET 7.0 on Debi
 
 > 🔍 Alternatively, you can add as many extra extensions as you like, from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode).
 
+### Customization on `on-create.sh` ##
 
-### Customization on `post-create.sh` ##
-
-You can pre-install any tool through `post-create.sh`, which the devcontainer features don't natively support yet. eg) PowerShell.
+You can pre-install any tool through `on-create.sh`, which the devcontainer features don't natively support yet. eg) PowerShell.
 
 1. If you want to install oh-my-posh for PowerShell, uncomment the section below
 
@@ -161,8 +160,7 @@ You can pre-install any tool through `post-create.sh`, which the devcontainer fe
     sudo chmod +x /usr/local/bin/oh-my-posh
     ```
 
-> 🔍 There are more customization scenarios in [`post-create.sh`](./.devcontainer/post-create.sh), if you like to follow.
-
+> 🔍 There are more customization scenarios in [`on-create.sh`](./.devcontainer/on-create.sh), if you like to follow.
 
 ## 📚 Resources
 
