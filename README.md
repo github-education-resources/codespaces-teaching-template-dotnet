@@ -71,14 +71,14 @@ You can configure things like:
 
 #### Base Image
 
-By default, this devcontainer settings uses the base image of **.NET 7.0 on Debian 11** by default. You can change the base image to [one in the list](https://hub.docker.com/_/microsoft-dotnet-sdk/).
+By default, this devcontainer settings uses the base image of **.NET 8.0 on Ubuntu LTS 22.04** by default. You can change the base image to [one in the list](https://hub.docker.com/_/microsoft-dotnet-sdk/).
 
 ```jsonc
 "build": {
   "dockerfile": "./Dockerfile",
   "context": ".",
   "args": {
-    "VARIANT": "7.0"
+    "VARIANT": "8.0-jammy"
   }
 }
 ```
